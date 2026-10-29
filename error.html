@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطا | WOE</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- پس‌زمینه ذرات -->
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="container">
+
+        <header>
+            <div class="logo" style="animation: shake 0.8s ease infinite;">😕</div>
+            <h1>خطا!</h1>
+        </header>
+
+        <div class="hero-card">
+            <h2>{{ message }}</h2>
+            <p class="desc">نگران نباش، برگرد به جای امن! 😎</p>
+            <div class="hero-buttons">
+                <a href="/" class="btn btn-primary">🏠 بازگشت به خانه</a>
+                <a href="/lobby" class="btn btn-secondary">🎮 رفتن به لابی</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>ساخته‌شده با ❤️ توسط امیرحسین حاجی مرادخانی | ۱۴۰۵</p>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

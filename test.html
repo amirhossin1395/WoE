@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ test_name }} | WOE</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/games.css') }}">
+</head>
+<body>
+
+    <!-- پس‌زمینه ذرات -->
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="container">
+
+        <!-- هدر -->
+        <header>
+            <div class="logo">🧠</div>
+            <h1>{{ test_name }}</h1>
+            <a href="/tests" class="logout-link">🔙 بازگشت به تست‌ها</a>
+        </header>
+
+        <!-- باکس تست -->
+        <div class="test-box">
+            <div class="test-intro" id="test-intro">
+                <p class="test-desc">آماده‌ای ببینی نتیجه چیه؟ 😎</p>
+                <button id="start-test" class="btn btn-primary">شروع تست 🚀</button>
+            </div>
+
+            <div id="test-result" class="result-card" style="display:none;">
+                <div class="result-emoji" id="result-emoji">🧠</div>
+                <h2 id="test-percent">--%</h2>
+                <div class="rank-badge" id="test-rank">در حال اسکن...</div>
+                <button id="share-test" class="btn btn-share">📤 اشتراک‌گذاری نتیجه</button>
+            </div>
+        </div>
+
+        <!-- فوتر -->
+        <footer>
+            <p>ساخته‌شده با ❤️ توسط امیرحسین حاجی مرادخانی | ۱۴۰۵</p>
+        </footer>
+
+    </div>
+
+    <!-- متغیرهای سراسری برای test.js -->
+    <script>
+        window.TEST_NAME = '{{ test_name }}';
+        window.TEST_KEY = '{{ test_key }}';
+    </script>
+
+    <!-- اسکریپت‌ها -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+</body>
+</html>

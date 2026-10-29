@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت‌نام | WOE</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="bg-particles" id="particles"></div>
+    <div class="container">
+        <header>
+            <div class="logo">📝</div>
+            <h1>ثبت‌نام در WOE</h1>
+        </header>
+
+        {% if error %}
+        <div class="error-box">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" class="auth-form">
+            <label>نام کاربری (انگلیسی)</label>
+            <input type="text" name="username" placeholder="مثلاً: amirhossein" required pattern="[a-zA-Z0-9_]{3,20}" title="فقط حروف انگلیسی، عدد و آندرلاین (۳ تا ۲۰ کاراکتر)">
+
+            <label>نام نمایشی (فارسی)</label>
+            <input type="text" name="display_name" placeholder="مثلاً: امیرحسین" required>
+
+            <label>رمز عبور</label>
+            <input type="password" name="password" placeholder="حداقل ۶ کاراکتر" required minlength="6">
+
+            <label>تکرار رمز عبور</label>
+            <input type="password" name="password2" placeholder="دوباره رمز رو بنویس" required minlength="6">
+
+            <button type="submit" class="btn btn-primary">ثبت‌نام 🎉</button>
+        </form>
+
+        <p class="auth-link">حساب داری؟ <a href="/login">وارد شو</a></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

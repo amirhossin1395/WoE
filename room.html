@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتاق {{ code }} | WOE</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/games.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 اتاق {{ code }}</h1>
+            <p class="subtitle">سلام {{ display_name }}! 👋</p>
+            <button id="leave-btn" class="logout-link">خروج از اتاق</button>
+        </header>
+
+        <div class="room-info">
+            <p>کد اتاق رو برای دوستات بفرست: <strong class="room-code">{{ code }}</strong></p>
+        </div>
+
+        <div class="players-list" id="players-list"></div>
+
+        <div id="games-grid" class="games-grid">
+            <h2>انتخاب بازی</h2>
+            <button onclick="startGame('xo')" class="game-card">❌⭕ XO</button>
+            <button onclick="startGame('rock-paper')" class="game-card">✊✋✌️ سنگ کاغذ قیچی</button>
+            <button onclick="startGame('uno')" class="game-card">🃏 اونو</button>
+            <button onclick="startGame('snake-ladder')" class="game-card">🎲 مار و پله</button>
+            <button onclick="startGame('truth-dare')" class="game-card">🎯 جرئت یا حقیقت</button>
+        </div>
+
+        <div id="game-area" style="display:none;"></div>
+        <div id="error-box" class="error-box" style="display:none;"></div>
+    </div>
+
+    <script>
+        window.ROOM_CODE = '{{ code }}';
+        window.DISPLAY_NAME = '{{ display_name }}';
+        window.USERNAME = '{{ username }}';
+    </script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/room.js') }}"></script>
+</body>
+</html>

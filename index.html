@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WOE - دنیای سرگرمی | بازی آنلاین و تست‌های شوخ‌طبعانه">
+    <title>WOE | دنیای سرگرمی 🎮</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- پس‌زمینه ذرات -->
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="container">
+
+        <!-- هدر -->
+        <header>
+            <div class="logo">🎮</div>
+            <h1>WOE</h1>
+            <p class="subtitle">World of Entertainment — دنیای سرگرمی</p>
+        </header>
+
+        <!-- کارت اصلی -->
+        <div class="hero-card">
+            <h2>بازی کن، تست بده، بخند! 😄</h2>
+            <p class="desc">با دوستات از راه دور بازی کن (۲ تا ۱۰ نفر) 🚀</p>
+
+            <div class="hero-buttons">
+                <a href="/login" class="btn btn-primary">🚀 شروع کن</a>
+                <a href="/register" class="btn btn-secondary">📝 ثبت‌نام</a>
+            </div>
+        </div>
+
+        <!-- ویژگی‌ها -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎲</div>
+                <h3>بازی آنلاین</h3>
+                <p>XO، سنگ کاغذ قیچی، مار و پله و...</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>تست‌های باحال</h3>
+                <p>فضول سنج، اسکنر شانس، هوش و...</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>چندنفره</h3>
+                <p>از ۲ تا ۱۰ نفر از راه دور</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">😂</div>
+                <h3>جوک تصادفی</h3>
+                <p>هر وقت خواستی بخند!</p>
+            </div>
+        </div>
+
+        <!-- فوتر -->
+        <footer>
+            <p>ساخته‌شده با ❤️ توسط امیرحسین حاجی مرادخانی | ۱۴۰۵</p>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

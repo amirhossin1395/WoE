@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لابی | WOE</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- پس‌زمینه ذرات -->
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="container">
+
+        <!-- هدر -->
+        <header>
+            <div class="logo">🏠</div>
+            <h1>لابی</h1>
+            <p class="subtitle">سلام {{ display_name }}! 👋</p>
+            <a href="/logout" class="logout-link">خروج</a>
+        </header>
+
+        <!-- کارت لابی -->
+        <div class="lobby-box">
+
+            <!-- ساخت اتاق -->
+            <div class="lobby-section">
+                <h2>🏠 ساخت اتاق جدید</h2>
+                <p class="lobby-desc">یه اتاق بساز و کدش رو برای دوستات بفرست!</p>
+                <button id="create-btn" class="btn btn-primary">🏠 ساخت اتاق</button>
+            </div>
+
+            <!-- جداکننده -->
+            <div class="divider"><span>یا</span></div>
+
+            <!-- ورود به اتاق -->
+            <div class="lobby-section">
+                <h2>🚪 ورود به اتاق</h2>
+                <p class="lobby-desc">کد ۶ رقمی اتاق رو وارد کن!</p>
+                <div class="join-box">
+                    <input type="text" id="room-code" placeholder="کد اتاق (۶ رقمی)" maxlength="6" inputmode="numeric" autocomplete="off">
+                    <button id="join-btn" class="btn btn-secondary">🚪 ورود</button>
+                </div>
+            </div>
+
+            <!-- جداکننده -->
+            <div class="divider"><span>یا</span></div>
+
+            <!-- تست‌ها -->
+            <div class="lobby-section">
+                <h2>🧠 تست‌های باحال</h2>
+                <p class="lobby-desc">بدون نیاز به اتاق، همین الان تست بده!</p>
+                <a href="/tests" class="btn btn-test">🧠 رفتن به تست‌ها</a>
+            </div>
+
+        </div>
+
+        <!-- باکس خطا -->
+        <div id="error-box" class="error-box" style="display:none;"></div>
+
+        <!-- فوتر -->
+        <footer>
+            <p>ساخته‌شده با ❤️ توسط امیرحسین حاجی مرادخانی | ۱۴۰۵</p>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/room.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

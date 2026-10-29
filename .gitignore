@@ -1,0 +1,87 @@
+# =========================================
+# WOE - World of Entertainment
+# .gitignore - فایل‌های نادیده‌گرفته‌شده
+# =========================================
+
+# ========== پایتون ==========
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ========== محیط مجازی ==========
+venv/
+env/
+ENV/
+.venv/
+.virtualenv/
+
+# ========== دیتابیس ==========
+*.db
+*.sqlite
+*.sqlite3
+woe.db
+instance/
+
+# ========== متغیرهای محیطی ==========
+.env
+.env.local
+.env.*.local
+*.env
+
+# ========== IDE و ادیتور ==========
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ========== سیستم‌عامل ==========
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========== لاگ‌ها ==========
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========== کش ==========
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ========== Render ==========
+.render/
+render.yaml
+
+# ========== فایل‌های موقت ==========
+*.tmp
+*.temp
+tmp/
+temp/
