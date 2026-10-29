@@ -1,0 +1,532 @@
+/* =========================================
+   WOE - World of Entertainment
+   استایل اصلی - تم سبز شاد
+   ========================================= */
+
+:root {
+    --green-1: #10b981;
+    --green-2: #34d399;
+    --green-3: #6ee7b7;
+    --green-dark: #065f46;
+    --green-bg: #ecfdf5;
+    --yellow: #fbbf24;
+    --orange: #fb923c;
+    --pink: #f472b6;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --red: #ef4444;
+    --text: #064e3b;
+    --text-muted: #047857;
+    --card: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
+
+body {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #6ee7b7 100%);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+/* =========================================
+   پس‌زمینه ذرات
+   ========================================= */
+.bg-particles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* =========================================
+   کانتینر
+   ========================================= */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   هدر
+   ========================================= */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.logo {
+    font-size: 4rem;
+    animation: bounce 2s infinite;
+    display: inline-block;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--green-dark), var(--green-1), var(--yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 10px 0;
+    text-shadow: 2px 2px 0 rgba(110, 231, 183, 0.3);
+}
+
+.subtitle { color: var(--text-muted); font-size: 1.1rem; font-weight: bold; }
+
+.logout-link {
+    display: inline-block;
+    margin-top: 10px;
+    background: transparent;
+    color: var(--red);
+    border: 2px solid var(--red);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.logout-link:hover {
+    background: var(--red);
+    color: white;
+}
+
+/* =========================================
+   کارت اصلی (Hero)
+   ========================================= */
+.hero-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(16, 185, 129, 0.25);
+    border: 3px solid var(--green-2);
+    margin-bottom: 25px;
+    animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-card h2 { color: var(--green-dark); margin-bottom: 10px; font-size: 1.5rem; }
+.hero-card .desc { color: var(--text-muted); margin-bottom: 25px; }
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   دکمه‌ها
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+}
+
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(0,0,0,0.15); }
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--green-1), var(--green-2));
+    color: white;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5); }
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--blue), #3b82f6);
+    color: white;
+}
+.btn-secondary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(96, 165, 250, 0.5); }
+
+.btn-test {
+    background: linear-gradient(135deg, var(--yellow), var(--orange));
+    color: var(--green-dark);
+}
+.btn-test:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(251, 191, 36, 0.5); }
+
+.btn-share {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: white;
+}
+.btn-share:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(167, 139, 250, 0.5); }
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--red), #dc2626);
+    color: white;
+}
+.btn-danger:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(239, 68, 68, 0.5); }
+
+/* =========================================
+   ویژگی‌ها (Features)
+   ========================================= */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.feature-card {
+    background: white;
+    padding: 20px 15px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.15);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--green-2);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.3);
+}
+
+.feature-icon { font-size: 2rem; margin-bottom: 8px; }
+.feature-card h3 { color: var(--green-dark); font-size: 1rem; margin-bottom: 5px; }
+.feature-card p { color: var(--text-muted); font-size: 0.8rem; }
+
+/* =========================================
+   فرم‌های احراز هویت
+   ========================================= */
+.auth-form {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(16, 185, 129, 0.25);
+    border: 3px solid var(--green-2);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    animation: slideUp 0.6s ease;
+}
+
+.auth-form label {
+    font-weight: bold;
+    color: var(--green-dark);
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.auth-form input {
+    padding: 14px 18px;
+    border: 3px solid #d1fae5;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    text-align: right;
+    transition: all 0.3s ease;
+    background: var(--green-bg);
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--green-1);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.auth-form .btn { margin-top: 10px; width: 100%; }
+
+.auth-link {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.auth-link a {
+    color: var(--green-1);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-link a:hover { text-decoration: underline; }
+
+/* =========================================
+   باکس خطا و پیام
+   ========================================= */
+.error-box {
+    background: #fee2e2;
+    color: var(--red);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 2px solid var(--red);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+.flash-box {
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.flash-success {
+    background: #d1fae5;
+    color: var(--green-dark);
+    border: 2px solid var(--green-1);
+}
+
+/* =========================================
+   لابی
+   ========================================= */
+.lobby-box {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(16, 185, 129, 0.25);
+    border: 3px solid var(--green-2);
+    animation: slideUp 0.6s ease;
+}
+
+.lobby-section { text-align: center; padding: 10px 0; }
+.lobby-section h2 { color: var(--green-dark); font-size: 1.2rem; margin-bottom: 8px; }
+.lobby-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px; }
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green-2), transparent);
+}
+
+.divider span {
+    padding: 0 15px;
+    color: var(--green-1);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.join-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.join-box input {
+    padding: 14px 18px;
+    border: 3px solid #d1fae5;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: bold;
+    max-width: 180px;
+    transition: all 0.3s ease;
+    background: var(--green-bg);
+}
+
+.join-box input:focus {
+    outline: none;
+    border-color: var(--green-1);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+/* =========================================
+   لیست بازیکنان
+   ========================================= */
+.players-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.player {
+    background: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--green-dark);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    border: 2px solid var(--green-2);
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.player.host::after {
+    content: ' 👑';
+}
+
+/* =========================================
+   اتاق و بازی‌ها
+   ========================================= */
+.room-info {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 3px solid var(--green-2);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.15);
+}
+
+.room-code {
+    color: var(--green-1);
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.games-grid {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(16, 185, 129, 0.25);
+    border: 3px solid var(--green-2);
+    animation: slideUp 0.6s ease;
+}
+
+.games-grid h2 {
+    text-align: center;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.game-card {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--green-bg), #d1fae5);
+    border: 3px solid transparent;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--green-dark);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+}
+
+.game-card:hover {
+    border-color: var(--green-1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+/* =========================================
+   کارت نتیجه تست
+   ========================================= */
+.result-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(16, 185, 129, 0.25);
+    border: 3px solid var(--green-2);
+    margin-top: 20px;
+    animation: zoomIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.result-card h2 {
+    font-size: 4rem;
+    background: linear-gradient(135deg, var(--green-1), var(--yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 10px 0;
+    filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.3));
+}
+
+.result-card p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   فوتر
+   ========================================= */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: var(--green-dark);
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   ریسپانسیو
+   ========================================= */
+@media (max-width: 480px) {
+    header h1 { font-size: 2rem; }
+    .logo { font-size: 3.5rem; }
+    .features-grid { grid-template-columns: 1fr; }
+    .hero-buttons { flex-direction: column; }
+    .hero-buttons .btn { width: 100%; }
+    .join-box input { max-width: 140px; font-size: 1rem; }
+    .result-card h2 { font-size: 3rem; }
+}

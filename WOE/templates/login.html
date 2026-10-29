@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود | WOE</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="bg-particles" id="particles"></div>
+    <div class="container">
+        <header>
+            <div class="logo">🔐</div>
+            <h1>ورود به WOE</h1>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-box flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if error %}
+        <div class="error-box">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" class="auth-form">
+            <label>نام کاربری</label>
+            <input type="text" name="username" placeholder="مثلاً: amirhossein" required autocomplete="username">
+
+            <label>رمز عبور</label>
+            <input type="password" name="password" placeholder="رمز عبورت" required autocomplete="current-password">
+
+            <button type="submit" class="btn btn-primary">ورود 🚀</button>
+        </form>
+
+        <p class="auth-link">حساب نداری؟ <a href="/register">ثبت‌نام کن</a></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تست‌ها | WOE</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- پس‌زمینه ذرات -->
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="container">
+
+        <!-- هدر -->
+        <header>
+            <div class="logo">🧠</div>
+            <h1>تست‌های WOE</h1>
+            <p class="subtitle">بدون نیاز به اتاق، همین الان تست بده! 😎</p>
+            <a href="/lobby" class="logout-link">🔙 بازگشت به لابی</a>
+        </header>
+
+        <!-- گرید تست‌ها -->
+        <div class="cards-grid">
+
+            <a href="/test/space" class="game-card">
+                <div class="game-icon">🕵️</div>
+                <h3>فضول سنج</h3>
+                <p>چقدر فضولی؟</p>
+            </a>
+
+            <a href="/test/dare" class="game-card">
+                <div class="game-icon">😈</div>
+                <h3>تست جرئت</h3>
+                <p>چقدر جسوری؟</p>
+            </a>
+
+            <a href="/test/truth" class="game-card">
+                <div class="game-icon">💬</div>
+                <h3>تست راستگویی</h3>
+                <p>چقدر راست می‌گی؟</p>
+            </a>
+
+            <a href="/test/lie" class="game-card">
+                <div class="game-icon">🤥</div>
+                <h3>دروغ یا راست</h3>
+                <p>تشخیص دروغ!</p>
+            </a>
+
+            <a href="/test/luck" class="game-card">
+                <div class="game-icon">🍀</div>
+                <h3>اسکنر شانس</h3>
+                <p>شانست چقدره؟</p>
+            </a>
+
+            <a href="/test/acting" class="game-card">
+                <div class="game-icon">🎭</div>
+                <h3>اسکنر ادایی</h3>
+                <p>چقدر ادایی؟</p>
+            </a>
+
+            <a href="/test/coward" class="game-card">
+                <div class="game-icon">😨</div>
+                <h3>اسکنر ترسو</h3>
+                <p>چقدر ترسویی؟</p>
+            </a>
+
+            <a href="/test/iq" class="game-card">
+                <div class="game-icon">🧠</div>
+                <h3>اسکنر هوش</h3>
+                <p>IQت چنده؟</p>
+            </a>
+
+        </div>
+
+        <!-- فوتر -->
+        <footer>
+            <p>ساخته‌شده با ❤️ توسط امیرحسین حاجی مرادخانی | ۱۴۰۵</p>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
